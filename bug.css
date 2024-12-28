@@ -1,0 +1,10 @@
+This error occurs when using Tailwind's `@apply` directive within a class that's also using other Tailwind directives or styles.  The `@apply` directive attempts to inject styles that conflict with pre-existing styles defined in the parent class or elsewhere. This can lead to unexpected CSS overrides, styles not being applied correctly, or even complete style loss.
+
+For example:
+```css
+.my-class {
+  @apply bg-gray-100;
+  padding: 2rem;
+}
+```
+If another rule already defines `padding` for `.my-class`, it will clash, potentially causing the `padding` set by the `@apply` directive to be ignored or overridden unpredictably.
